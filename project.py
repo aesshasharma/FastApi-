@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Response # response for created error no (201)
+from fastapi import FastAPI, Response
 from pydantic import BaseModel
 from typing import Optional
 
