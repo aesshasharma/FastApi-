@@ -51,29 +51,29 @@ def get_product(productid:int, response:Response):
         response.status_code = 500
         return {"message":"Error fetching products","isSuccess":False}
 
-# update
-@app.put("/product/{productid}")
-def updateProduct(productid: int, product: Product, response: Response):
-    try:
-        for index in range(len(products)):
-            if products[index].id == productid:
-                products[index] = product
-                response.status_code = 200
-                return {
-                    "message": "Product updated successfully",
-                    "isSuccess": True
-                }
+# # update
+# @app.put("/product/{productid}")
+# def updateProduct(productid: int, product: Product, response: Response):
+#     try:
+#         for index in range(len(products)):
+#             if products[index].id == productid:
+#                 products[index] = product
+#                 response.status_code = 200
+#                 return {
+#                     "message": "Product updated successfully",
+#                     "isSuccess": True
+#                 }
 
-        response.status_code = 404
-        return {
-            "message": "Product not found",
-            "isSuccess": False
-        }
+#         response.status_code = 404
+#         return {
+#             "message": "Product not found",
+#             "isSuccess": False
+#         }
 
-    except Exception as e:
-        response.status_code = 500
-        return {
-            "message": "Error updating product",
-            "isSuccess": False
-        }
+#     except Exception as e:
+#         response.status_code = 500
+#         return {
+#             "message": "Error updating product",
+#             "isSuccess": False
+#         }
             
